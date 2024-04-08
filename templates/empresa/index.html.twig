@@ -1,0 +1,90 @@
+{# templates/empresa/list.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Lista de Empresas
+{% endblock %}
+{% block body %}
+	<div class="container" id='principal'>
+		<h1 class="text-center">
+			Lista de Empresas
+		</h1>
+		<a href="{{ path('empresa_new') }}" class="btn btn-success" style='margin-bottom:10px'>
+			Cadastrar Empresa
+		</a>
+		<table class='table table-striped' border='1' id='tabela-empresas' style='text-align:center'>
+			<thead>
+				<tr>
+					<th>
+						Nome
+					</th>
+					<th>
+						CNPJ
+					</th>
+					<th>
+						Email
+					</th>
+					<th>
+						Contato
+
+					</th>
+					<th>
+						Ações
+
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% if empresa is not empty %}
+					{% for empresa in empresa %}
+						<tr>
+							<td style='text-align:left; padding:5px5px5px5px'>
+								{{ empresa.nome }}
+							</td>
+							<td>
+								{{ empresa.cnpj }}
+							</td>
+							<td>
+								{{ empresa.email }}
+							</td>
+							<td>
+								{{ empresa.contato }}
+							</td>
+							<td>
+								<a href="{{ path('socio_index', {'id': empresa.id}) }}" class="btn btn-primary">
+									Sócios
+								</a>
+								<a href="{{ path('empresa_edit', {'id': empresa.id}) }}" class="btn btn-success">
+									Editar
+								</a>
+								<a href="{{ path('empresa_delete', {'id': empresa.id}) }}" class="btn btn-danger" onclick="return confirmDelete()">
+									Excuir
+								</a>
+							</td>
+						</tr>
+					{% endfor %}
+				{% else %}
+					<tr>
+						<td coslpan='5'>
+							Nenhuma empresa encontrada.
+
+						</td>
+					</tr>
+				{% endif %}
+			</tbody>
+		</table>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function () {
+            $('#tabela-empresas').DataTable({
+                language: {
+                    url: "{{ asset('js/pt-BR.json') }}"
+                }
+        });
+        });
+        function confirmDelete() {
+            return confirm('Tem certeza que deseja excluir este sócio?');
+        }
+	</script>
+{% endblock %}

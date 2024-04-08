@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+	edição Sócios
+{% endblock %}
+{% block body %}
+	<div class="container" id='principal'>
+		<h1 class="text-center">
+			{{ titulo }}
+		</h1>
+		{{ form(form) }}
+			<a href="{{ path('socio_index', {'id': id}) }}" class="btn btn-success" style=' margin-top:10px'>
+				Voltar
+			</a>
+		</div>
+	{% endblock %}

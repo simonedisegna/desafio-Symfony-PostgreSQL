@@ -1,0 +1,22 @@
+security:
+  encoders:
+    App\Entity\User:
+      algorithm: auto
+
+  providers:
+    db_provider:
+      entity:
+        class: App\Entity\User
+        property: username
+
+  firewalls:
+    main:
+      anonymous: ~
+      provider: db_provider
+      form_login:
+        login_path: login_index
+        check_path: login_index
+        default_target_path: /empresa
+      logout:
+        path: login_index
+        target: app_login

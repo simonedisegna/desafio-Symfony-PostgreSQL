@@ -1,0 +1,22 @@
+api_platform:
+  title: API crud EMPRESAS E SEU SOCIOS
+  description: GERENCIADOR DE EMPRESAS E SEU SOCIOS
+  version: 1.0.0
+  formats:
+    jsonld: ['application/ld+json']
+  mapping:
+    paths:
+    - "%kernel.project_dir%/src/Controller"
+  docs_formats:
+    jsonld: ['application/ld+json']
+    jsonopenapi: ['application/vnd.openapi+json']
+    html: ['text/html']
+  defaults:
+    stateless: true
+    cache_headers:
+      vary: ['Content-Type', 'Authorization', 'Origin']
+    extra_properties:
+      standard_put: true
+      rfc_7807_compliant_errors: true
+  event_listeners_backward_compatibility_layer: false
+  keep_legacy_inflector: false

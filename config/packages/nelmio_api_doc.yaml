@@ -1,0 +1,9 @@
+nelmio_api_doc:
+  documentation:
+    info:
+      title: "API DO PROJETO"
+      description: "Documentação da API referente ao desafio solicitado."
+      version: 1.0.0
+  areas:
+    path_patterns:
+    - ^/api(?!/doc$)

@@ -1,0 +1,6 @@
+ id |         nome         |      cnpj      |         email         |    contato     |                          endereco                          
+----+----------------------+----------------+-----------------------+----------------+------------------------------------------------------------
+  4 | Empresa Laforte LTDA | 10028123000194 | teste@teste.com       | (48) 7834.4567 | Rua Roberto Pedro Prudêncio, 344, Tubarão SC
+  3 | Casas Alegre LTDA    |  2860807000120 | casasalegre@teste.com | (51)9875.5678  | Avenida Castelo Branco 898,456 Bairro Centro, Esmeralda RS
+(2 rows)
+

@@ -1,0 +1,77 @@
+{# templates/empresa/new.html.twig #}
+{% extends 'base.html.twig' %}
+{% block title %}
+    Novo Cadastro de Empresa
+{% endblock %}
+{% block body %}
+    <div class="container" id='principal'>
+        <h1 class="text-center">
+            Novo Cadastro de Empresa   
+        </h1>
+        {% if msgErro %}
+            <div class="alert alert-danger" role="alert">
+                {{ error_message }}
+            </div>
+        {% endif %}
+        {{ form_start(form) }}
+        {# Adicionando classes Bootstrap diretamente aos campos do formulário #}
+        <div class="form-group">
+            <label for="name">
+                Nome:        
+            </label>
+            {{ form_widget(form.nome, {'attr': {'class': 'form-control' }}
+            ) }}            
+                        
+            {% if form_errors(form.nome) %}
+                <span class="text-danger">
+                    {{ form_errors(form.nome) }}
+                </span>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="cnpj">
+                CNPJ:                            
+            </label>
+            {{ form_widget(form.cnpj, {'attr': {'class': 'form-control', 'maxlength': 18, 'oninput': "limitInputLength(this, 18)" }}
+            ) }}
+        </div>
+        <div class="form-group">
+            <label for="contato">
+                Contato:                                                                        
+            </label>
+            {{ form_widget(form.contato, {'attr': {'class': 'form-control' }}
+            ) }}                    
+        </div>
+        <div class="form-group">
+            <label for="email">
+                E-mail:                        
+                            
+            </label>
+            {{ form_widget(form.email, {'attr': {'class': 'form-control' }}
+            ) }}                
+                    
+        </div>
+        <div class="form-group" style='margin-bottom:10px'>
+            <label for="endereco">
+                Endereço completo:
+            </label>
+            {{ form_widget(form.endereco, {'attr': {'class': 'form-control' }}
+            ) }}            
+                    
+        </div>
+        <button type="submit" class="btn btn-primary">
+            Salvar
+        </button>
+        <a href="{{ path('empresa_index') }}" class="btn btn-success">
+            Voltar    
+        </a>
+        {{ form_end(form) }}
+    </div>
+    <script>
+        function limitInputLength(element, maxLength) {
+            if (element.value.length > maxLength) {
+                element.value = element.value.slice(0, maxLength);
+            }
+        }
+    </script>
+{% endblock %}
