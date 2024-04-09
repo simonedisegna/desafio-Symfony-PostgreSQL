@@ -11,8 +11,8 @@
 		<h1 class="text-center">Socios da Empresa
 			{{ empresa }}</h1>
 		<a href="{{ path('socio_new', {'id': empresa_id}) }}" class="btn btn-success" style='margin-bottom:10px'>
-            Cadastrar Sócios
-        </a>
+			Cadastrar Sócios
+		</a>
 		<table class='table table-striped' border='1' id='tabela-socio' style='text-align:center'>
 			<thead>
 				<tr>
@@ -44,22 +44,22 @@
 								{{ socio.cpf }}
 							</td>
 							<td style='text-align:left; padding:5px5px5px5px'>
-								{{ socio.email }}
+								{{ socio.contato }}
 							</td>
 							<td style='text-align:left; padding:5px5px5px5px'>
-								{{ socio.contato }}
+								{{ socio.email }}
 							</td>
 							<td>
 								<a href="{{ path('socio_edit', {'id': socio.id}) }}" class="btn btn-success">
-                                    Editar
-                                </a>
+									Editar
+								</a>
 								<a href="{{ path('socio_excluir', {'id': socio.id}) }}" class="btn btn-danger" onclick="return confirmDelete()">
 									Excuir
 								</a>
 							</td>
 						</tr>
 					{% endfor %}
-					{% else %}
+				{% else %}
 					<tr>
 						<td colspan='4'>Não existem sócios cadastrados no momento.</td>
 					</tr>
