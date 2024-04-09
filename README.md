@@ -1,4 +1,4 @@
-# :computer: Documentação do Projeto DESAFIO Symfony comPostgreSQL  :computer:
+# :computer: Documentação do Projeto DESAFIO Symfony com PostgreSQL  :computer:
 ## 1. Introdução
 Bem-vindo ao sistema CRUD de Empresas com CRUD de Sócios! Este projeto foi desenvolvido como parte de um desafio para criar um sistema de gerenciamento de empresas e seus respectivos sócios. O sistema oferece funcionalidades completas para criar, ler, atualizar e excluir informações de empresas e sócios, além de fornecer uma API para interação programática, com segurança de acesso.
 
